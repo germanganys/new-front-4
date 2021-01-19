@@ -9,11 +9,9 @@
       <p-dropdown [options]="rChoices" [(ngModel)]="currR"  optionLabel="strValue" (onChange)="rChanged()"
                   optionValue="value"></p-dropdown>
       <p-footer>
-        <span class="p-buttonset">
           <button pButton type="button" (click)="onSubmit()" label="Submit" icon="pi pi-check"></button>
           <button pButton type="button" (click)="logout()" label="Logout" icon="pi pi-times"></button>
           <button pButton type="button" (click)="onClear()" label="Clear All" icon="pi pi-trash"></button>
-        </span>
       </p-footer>
     </p-card>
   </div>
