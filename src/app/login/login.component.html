@@ -1,0 +1,28 @@
+<div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-3 p-d-flex p-jc-center">
+        <p-card>
+            <h2>Ганна Савон 2761</h2>
+            <h3>Enter credentials:</h3>
+            <br>
+            <span class="p-float-label">
+    <input id="user-input" type="text" pInputText [(ngModel)]="username" required>
+    <label for="user-input">Username:</label>
+  </span>
+            <br>
+            <br>
+            <span class="p-float-label">
+        <input id="pass-input" type="password" pInputText [(ngModel)]="password" required>
+        <label for="pass-input">Password</label>
+      </span>
+            <br>
+            <span class="p-buttonset">
+        <button pButton type="button" (click)="login()" label="Login"></button>
+        <button pButton type="button" (click)="register()" label="Register"></button>
+      </span>
+        </p-card>
+    </div>
+
+</div>
+<p-toast position="top-center"></p-toast>
+
+

@@ -1,0 +1,49 @@
+<div class="p-grid">
+  <div class="p-col">
+    <p-card>
+      <h4>X value: {{currX}}</h4>
+      <p-dropdown [options]="xChoices" [(ngModel)]="currX" optionLabel="strValue" optionValue="value"></p-dropdown>
+      <h4>Y value: {{currY}}</h4>
+      <p-slider [(ngModel)]="currY" [min]="-2.99" [max]="4.99" [step]="0.01"></p-slider>
+      <h4>R value: {{currR}}</h4>
+      <p-dropdown [options]="rChoices" [(ngModel)]="currR"  optionLabel="strValue" (onChange)="rChanged()"
+                  optionValue="value"></p-dropdown>
+      <p-footer>
+        <span class="p-buttonset">
+          <button pButton type="button" (click)="onSubmit()" label="Submit" icon="pi pi-check"></button>
+          <button pButton type="button" (click)="logout()" label="Logout" icon="pi pi-times"></button>
+          <button pButton type="button" (click)="onClear()" label="Clear All" icon="pi pi-trash"></button>
+        </span>
+      </p-footer>
+    </p-card>
+  </div>
+  <div class="p-col">
+    <p-card>
+      <app-visual [rValue]="currR" [simplePoints]="pointsForVisual" (click)="onCanvasClick($event)"></app-visual>
+    </p-card>
+  </div>
+</div>
+
+<div class="p-grid">
+  <div class="p-col-12">
+    <p-table [value]="pointsForTable">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>X</th>
+          <th>Y</th>
+          <th>R</th>
+          <th>Result</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-point>
+        <tr>
+          <td>{{ point.x | number:'1.2-2' }}</td>
+          <td>{{ point.y | number:'1.2-2' }}</td>
+          <td>{{ point.r | number:'1.2-2' }}</td>
+          <td>{{ point.result }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+<p-toast position="top-center"></p-toast>
