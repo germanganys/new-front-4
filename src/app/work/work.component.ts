@@ -63,7 +63,7 @@ export class WorkComponent implements OnInit {
       {value: 3, strValue: '3'},
     ];
     this.rChoices = this.xChoices;
-    if (localStorage.getItem('key') != null) {
+    if (localStorage.getItem('key') == null) {
       router.navigate(['']);
     }
     this.fetchPoints();
