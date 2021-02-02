@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     DropdownModule,
     FormsModule,
     SliderModule,

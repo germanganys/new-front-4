@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
-  lkBaseUrl = 'http://134.0.115.32:8080/unnamed/lk/';
+  lkBaseUrl = '/lab4-1.0/api/lk/';
   lkLoginUrl = this.lkBaseUrl + 'login';
   lkRegisterUrl = this.lkBaseUrl + 'register';
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
               private http: HttpClient,
               private messageService: MessageService) {
     if (localStorage.getItem('key') !== null) {
-      window.location.href = '/admin';
+      window.location.href = 'admin';
     }
   }
 

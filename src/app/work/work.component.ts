@@ -28,8 +28,8 @@ export class WorkComponent implements OnInit {
   currY: number;
   currR: number;
 
-  baseApiUrl = 'http://134.0.115.32:8080/unnamed/api/points/';
-  baseLkUrl = 'http://134.0.115.32:8080/unnamed/lk/';
+  baseApiUrl = '/lab4-1.0/api/points/';
+  baseLkUrl = '/lab4-1.0/api/lk/';
 
   logoutUrl = this.baseLkUrl + 'logout';
   addPointUrl = this.baseApiUrl + 'add';
