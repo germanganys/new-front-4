@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
               private http: HttpClient,
               private messageService: MessageService) {
     if (localStorage.getItem('key') !== null) {
-      window.location.href = 'admin';
+      this.router.navigate(['admin']);
     }
   }
 
