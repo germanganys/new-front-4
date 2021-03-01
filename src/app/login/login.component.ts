@@ -38,9 +38,10 @@ export class LoginComponent implements OnInit {
       const resp: any = data;
       if (resp.status !== this.errorResponse) {
         localStorage.setItem('key', resp.key);
+        localStorage.setItem('username', resp.username);
         this.router.navigate(['admin']);
       } else {
-        var detail: string = resp.details;
+        const detail: string = resp.details;
         this.messageService.add({severity: 'error', summary: 'Error', detail});
       }
     }, error => this.messageService.add({severity: 'error', summary: 'Error', detail: 'Network error'}));
@@ -52,13 +53,13 @@ export class LoginComponent implements OnInit {
       password: this.password
     }).subscribe((data) => {
       const resp: any = data;
-      console.log(JSON.stringify(data));
       if (resp.status !== this.errorResponse) {
         localStorage.setItem('key', resp.key);
+        localStorage.setItem('username', resp.username);
         this.router.navigate(['admin']);
       } else {
-        var detail: string = resp.details;
-        this.messageService.add({severity: 'error', summary: 'Error', detail: detail});
+        const detail: string = resp.details;
+        this.messageService.add({severity: 'error', summary: 'Error', detail});
       }
     }, error => this.messageService.add({severity: 'error', summary: 'Error', detail: 'Network error'}));
   }

@@ -5,6 +5,7 @@ interface Point {
   y: number;
   r: number;
   result: boolean;
+  username: string;
 }
 
 @Component({
@@ -15,6 +16,7 @@ export class VisualComponent implements OnInit {
 
   @Input() rValue = 1;
   @Input() simplePoints: Point[] = [];
+  @Input() username = '';
 
   constructor() { }
 

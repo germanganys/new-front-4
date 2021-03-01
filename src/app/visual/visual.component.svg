@@ -158,7 +158,7 @@
                     [attr.cx]="point.x * 130 / point.r + 150"
                     [attr.cy]="150 - 130 * point.y / point.r"
                     [attr.r]="3"
-                    [attr.fill]="point.result ? 'red' : 'black'">
+                    [attr.fill]="point.result ? (point.username === username ? 'red' : 'blue') : (point.username === username ? 'black' : 'green')">
             </circle>
         </g>
     </g>

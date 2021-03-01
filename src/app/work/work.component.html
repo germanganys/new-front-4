@@ -17,7 +17,9 @@
   </div>
   <div class="p-col">
     <p-card>
-      <app-visual [rValue]="currR" [simplePoints]="pointsForVisual" (click)="onCanvasClick($event)"></app-visual>
+      <p>(red|black) - points of current user</p>
+      <p>(blue|green) - points of other users</p>
+      <app-visual [rValue]="currR" [simplePoints]="pointsForVisual" [username]="username" (click)="onCanvasClick($event)"></app-visual>
     </p-card>
   </div>
 </div>

@@ -13,6 +13,7 @@ interface Point {
   y: number;
   r: number;
   result: boolean;
+  username: string;
 }
 
 @Component({
@@ -23,6 +24,7 @@ interface Point {
 export class WorkComponent implements OnInit {
   xChoices: Choice[];
   rChoices: Choice[];
+  username: string;
 
   currX: number;
   currY: number;
@@ -66,6 +68,7 @@ export class WorkComponent implements OnInit {
     if (localStorage.getItem('key') == null) {
       router.navigate(['']);
     }
+    this.username = localStorage.getItem('username');
     this.fetchPoints();
   }
 
